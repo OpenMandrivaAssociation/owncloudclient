@@ -8,6 +8,8 @@ URL:		http://owncloud.org
 Source0:	https://download.owncloud.com/desktop/stable/%{name}-%{version}.tar.bz2
 BuildRequires:	cmake
 BuildRequires:	qt4-devel
+BuildRequires:	pkgconfig(QtWebKit)
+BuildRequires:	pkgconfig(neon)
 
 %description
 With ownCloud you can sync & share your files,
