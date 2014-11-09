@@ -10,6 +10,8 @@ BuildRequires:	cmake
 BuildRequires:	qt4-devel
 BuildRequires:	pkgconfig(QtWebKit)
 BuildRequires:	pkgconfig(neon)
+BuildRequires:	qtkeychain-devel
+BuildRequires:	pkgconfig(sqlite3)
 
 %description
 With ownCloud you can sync & share your files,
