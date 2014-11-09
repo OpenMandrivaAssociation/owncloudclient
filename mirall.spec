@@ -6,6 +6,8 @@ License:	GPLv2+
 Group:		Networking/File transfer
 URL:		http://owncloud.org
 Source0:	https://download.owncloud.com/desktop/stable/%{name}-%{version}.tar.bz2
+BuildRequires:	cmake
+BuildRequires:	qt4-devel
 
 %description
 With ownCloud you can sync & share your files,
