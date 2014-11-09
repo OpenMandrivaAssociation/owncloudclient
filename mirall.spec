@@ -21,7 +21,7 @@ extend and modify.
 %setup -q
 
 %build
-%cmake
+%cmake_qt4
 %make
 
 %install
