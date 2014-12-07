@@ -5,7 +5,7 @@
 Summary:	owncloud desktop client
 Name:		mirall
 Version:	1.7.0
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Archiving/Backup
 URL:		http://owncloud.org
