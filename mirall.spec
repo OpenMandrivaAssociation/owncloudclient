@@ -70,7 +70,7 @@ find %{buildroot}%{_libdir} -name "*.a" -delete
 %{_libdir}/libowncloudsync.so.%{version}
 %{_libdir}/libowncloudsync.so.%{major}
 
-%files -n %{devname}
+%files -n %{develname}
 %doc ChangeLog COPYING *.md
 %{_includedir}/httpbf.h
 %{_includedir}/owncloudsync
