@@ -2,20 +2,44 @@
 %define libname %mklibname owncloudsync %{major}
 %define develname %mklibname owncloudsync -d
 
-Summary:	owncloud desktop client
-Name:		mirall
-Version:	1.7.0
-Release:	2
+Summary:	ownCloud desktop client
+Name:		owncloudclient
+Version:	1.8.0
+Release:	1
 License:	GPLv2+
 Group:		Archiving/Backup
 URL:		http://owncloud.org
 Source0:	https://download.owncloud.com/desktop/stable/%{name}-%{version}.tar.bz2
 BuildRequires:	cmake
-BuildRequires:	qt4-devel
-BuildRequires:	pkgconfig(QtWebKit)
+BuildRequires:	qmake5
+BuildRequires:	cmake(ECM)
+BuildRequires:	cmake(Qt5Core)
+BuildRequires:	cmake(Qt5Network)
+BuildRequires:	cmake(Qt5Xml)
+BuildRequires:	cmake(Qt5WebKitWidgets)
+BuildRequires:	cmake(Qt5WebKit)
+BuildRequires:	cmake(Qt5PrintSupport)
+BuildRequires:	cmake(Qt5Quick)
+BuildRequires:	cmake(Qt5Widgets)
+BuildRequires:	cmake(Qt5Test)
+BuildRequires:	cmake(Qt5DBus)
+BuildRequires:	cmake(Qt5LinguistTools)
+BuildRequires:	cmake(Qt5Keychain)
+# temoraily disable KF5
+#BuildRequires:	cmake(KF5Archive)
+#BuildRequires:	cmake(KF5Bookmarks)
+#BuildRequires:	cmake(KF5CoreAddons)
+#BuildRequires:	cmake(KF5Config)
+#BuildRequires:	cmake(KF5ConfigWidgets)
+#BuildRequires:	cmake(KF5DBusAddons)
+#BuildRequires:	cmake(KF5KIO)
+#BuildRequires:	cmake(KF5KDELibs4Support)
+#BuildRequires:	cmake(KF5Parts)
+#BuildRequires:	cmake(KF5Activities)
+#BuildRequires:	cmake(KF5Konq)
 BuildRequires:	pkgconfig(neon)
-BuildRequires:	qtkeychain-devel
 BuildRequires:	pkgconfig(sqlite3)
+BuildRequires:	pkgconfig(openssl)
 Requires:       %{libname} = %{EVRD}
 
 %description
@@ -44,10 +68,9 @@ Development files and headers for %{name}.
 %setup -q
 
 %build
-%cmake_qt4 \
-	-DBUILD_WITH_QT4=on
+%cmake_qt5
 
-%make owncloud
+%make
 
 %install
 %makeinstall_std -C build
