@@ -1,15 +1,16 @@
 %define major 0
 %define libname %mklibname owncloudsync %{major}
 %define develname %mklibname owncloudsync -d
+%define beta beta1
 
 Summary:	ownCloud desktop client
 Name:		owncloudclient
-Version:	1.8.0
-Release:	1
+Version:	1.8.1
+Release:	0.%{beta}.1
 License:	GPLv2+
 Group:		Archiving/Backup
 URL:		http://owncloud.org
-Source0:	https://download.owncloud.com/desktop/stable/%{name}-%{version}.tar.bz2
+Source0:	https://download.owncloud.com/desktop/stable/%{name}-%{version}-%{beta}.tar.bz2
 BuildRequires:	cmake
 BuildRequires:	qmake5
 BuildRequires:	cmake(ECM)
@@ -66,7 +67,7 @@ Provides:       %{name}-devel = %{EVRD}
 Development files and headers for %{name}.
 
 %prep
-%setup -q
+%setup -qn %{name}-%{version}-%{beta}
 
 %build
 %cmake_qt5
