@@ -41,6 +41,7 @@ BuildRequires:	pkgconfig(neon)
 BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(openssl)
 Requires:       %{libname} = %{EVRD}
+%rename mirall
 
 %description
 With ownCloud you can sync & share your files,
