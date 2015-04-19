@@ -87,7 +87,8 @@ find %{buildroot}%{_libdir} -name "*.a" -delete
 %dir %{_datadir}/owncloud/i18n
 %{_bindir}/owncloud
 %{_bindir}/owncloudcmd
-%{_libdir}/owncloud/libocsync.so.%{version}*
+%{_libdir}/owncloud/libocsync.so.%{major}*
+%{_libdir}/owncloud/libocsync.so.%{version}
 %{_iconsdir}/hicolor/*/*/*.png
 %{_datadir}/nautilus-python/extensions/syncstate.py
 %{_datadir}/applications/owncloud.desktop
