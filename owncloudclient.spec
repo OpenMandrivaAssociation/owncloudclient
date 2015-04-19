@@ -11,6 +11,7 @@ License:	GPLv2+
 Group:		Archiving/Backup
 URL:		http://owncloud.org
 Source0:	https://download.owncloud.com/desktop/stable/%{name}-%{version}-%{beta}.tar.bz2
+Patch0:		0001-Fix-compilation-with-Qt-5.5.patch
 BuildRequires:	cmake
 BuildRequires:	qmake5
 BuildRequires:	cmake(ECM)
@@ -68,6 +69,7 @@ Development files and headers for %{name}.
 
 %prep
 %setup -qn %{name}-%{version}-%{beta}
+%apply_patches
 
 %build
 %cmake_qt5
