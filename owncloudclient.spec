@@ -87,7 +87,7 @@ find %{buildroot}%{_libdir} -name "*.a" -delete
 %dir %{_datadir}/owncloud/i18n
 %{_bindir}/owncloud
 %{_bindir}/owncloudcmd
-%{_libdir}/owncloud/libocsync.so.%{major}*
+%{_libdir}/owncloud/libocsync.so.%{version}*
 %{_iconsdir}/hicolor/*/*/*.png
 %{_datadir}/nautilus-python/extensions/syncstate.py
 %{_datadir}/applications/owncloud.desktop
@@ -99,7 +99,6 @@ find %{buildroot}%{_libdir} -name "*.a" -delete
 
 %files -n %{develname}
 %doc ChangeLog COPYING *.md
-%{_includedir}/httpbf.h
 %{_includedir}/owncloudsync
 %{_libdir}/libowncloudsync.so
 %{_libdir}/owncloud/libocsync.so
