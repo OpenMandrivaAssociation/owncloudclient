@@ -8,7 +8,7 @@ https://github.com/owncloud/client/commit/ba65187ad3ec727f72da7c6b643d8e49cfcfd6
 
 diff -Naur owncloudclient-1.8.1-beta1/src/3rdparty/qtsingleapplication/qtlocalpeer.cpp owncloudclient-1.8.1-beta1.tpg/src/3rdparty/qtsingleapplication/qtlocalpeer.cpp
 --- owncloudclient-1.8.1-beta1/src/3rdparty/qtsingleapplication/qtlocalpeer.cpp	2015-04-17 11:31:05.000000000 +0000
-+++ owncloudclient-1.8.1-beta1.tpg/src/3rdparty/qtsingleapplication/qtlocalpeer.cpp	2015-04-19 09:10:55.410276425 +0000
++++ owncloudclient-1.8.1-beta1.tpg/src/3rdparty/qtsingleapplication/qtlocalpeer.cpp	2015-04-19 10:54:03.185836367 +0000
 @@ -30,6 +30,7 @@
  #include "qtlocalpeer.h"
  
@@ -19,7 +19,7 @@ diff -Naur owncloudclient-1.8.1-beta1/src/3rdparty/qtsingleapplication/qtlocalpe
  #if defined(Q_OS_WIN)
 diff -Naur owncloudclient-1.8.1-beta1/src/libsync/cookiejar.cpp owncloudclient-1.8.1-beta1.tpg/src/libsync/cookiejar.cpp
 --- owncloudclient-1.8.1-beta1/src/libsync/cookiejar.cpp	2015-04-17 11:31:05.000000000 +0000
-+++ owncloudclient-1.8.1-beta1.tpg/src/libsync/cookiejar.cpp	2015-04-19 09:11:16.153832437 +0000
++++ owncloudclient-1.8.1-beta1.tpg/src/libsync/cookiejar.cpp	2015-04-19 10:54:03.185836367 +0000
 @@ -19,6 +19,7 @@
  #include <QFile>
  #include <QDateTime>
@@ -28,3 +28,15 @@ diff -Naur owncloudclient-1.8.1-beta1/src/libsync/cookiejar.cpp owncloudclient-1
  
  namespace OCC {
  
+diff -Naur owncloudclient-1.8.1-beta1/src/libsync/theme.h owncloudclient-1.8.1-beta1.tpg/src/libsync/theme.h
+--- owncloudclient-1.8.1-beta1/src/libsync/theme.h	2015-04-17 11:31:05.000000000 +0000
++++ owncloudclient-1.8.1-beta1.tpg/src/libsync/theme.h	2015-04-19 10:54:58.767308891 +0000
+@@ -16,7 +16,7 @@
+ #define _THEME_H
+ 
+ #include "syncresult.h"
+-
++#include <QObject>
+ 
+ class QIcon;
+ class QString;
