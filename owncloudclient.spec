@@ -80,8 +80,10 @@ Development files and headers for %{name}.
 %makeinstall_std -C build
 find %{buildroot}%{_libdir} -name "*.a" -delete
 
-# (tpg) needed symlink
-ln -sf %{_libdir}/owncloud/libocsync.so.%{version} %{buildroot}%{_libdir}/libocsync.so.%{major}
+# dirty fix
+pushd %{buildroot}%{_libdir}
+cp owncloud/libocsync.so.%{major} libocsync.so.%{major}
+popd
 
 %files
 %doc ChangeLog COPYING
@@ -100,7 +102,7 @@ ln -sf %{_libdir}/owncloud/libocsync.so.%{version} %{buildroot}%{_libdir}/libocs
 %files -n %{libname}
 %{_libdir}/libowncloudsync.so.%{version}
 %{_libdir}/libowncloudsync.so.%{major}
-#%{_libdir}/libocsync.so.%{major}
+%{_libdir}/libocsync.so.%{major}
 
 %files -n %{develname}
 %doc ChangeLog COPYING *.md
