@@ -100,7 +100,7 @@ ln -sf %{_libdir}/owncloud/libocsync.so.%{version} %{buildroot}%{_libdir}/libocs
 %files -n %{libname}
 %{_libdir}/libowncloudsync.so.%{version}
 %{_libdir}/libowncloudsync.so.%{major}
-%{_libdir}/libocsync.so.%{major}
+#%{_libdir}/libocsync.so.%{major}
 
 %files -n %{develname}
 %doc ChangeLog COPYING *.md
