@@ -6,7 +6,7 @@
 Summary:	ownCloud desktop client
 Name:		owncloudclient
 Version:	1.8.1
-Release:	0.%{beta}.1
+Release:	0.%{beta}.2
 License:	GPLv2+
 Group:		Archiving/Backup
 URL:		http://owncloud.org
@@ -80,6 +80,9 @@ Development files and headers for %{name}.
 %makeinstall_std -C build
 find %{buildroot}%{_libdir} -name "*.a" -delete
 
+# (tpg) needed symlink
+ln -s %{_libdir}/owncloud/libocsync.so.%{version} %{buildroot}%{_libdir}/libocsync.so.%{major}
+
 %files
 %doc ChangeLog COPYING
 %config(noreplace) %{_sysconfdir}/ownCloud/sync-exclude.lst
@@ -87,7 +90,7 @@ find %{buildroot}%{_libdir} -name "*.a" -delete
 %dir %{_datadir}/owncloud/i18n
 %{_bindir}/owncloud
 %{_bindir}/owncloudcmd
-%{_libdir}/owncloud/libocsync.so.%{major}*
+%{_libdir}/owncloud/libocsync.so.%{major}
 %{_libdir}/owncloud/libocsync.so.%{version}
 %{_iconsdir}/hicolor/*/*/*.png
 %{_datadir}/nautilus-python/extensions/syncstate.py
@@ -97,6 +100,7 @@ find %{buildroot}%{_libdir} -name "*.a" -delete
 %files -n %{libname}
 %{_libdir}/libowncloudsync.so.%{version}
 %{_libdir}/libowncloudsync.so.%{major}
+%{_libdir}/libocsync.so.%{major}
 
 %files -n %{develname}
 %doc ChangeLog COPYING *.md
