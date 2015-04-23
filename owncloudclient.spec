@@ -81,7 +81,7 @@ Development files and headers for %{name}.
 find %{buildroot}%{_libdir} -name "*.a" -delete
 
 # (tpg) needed symlink
-ln -s %{_libdir}/owncloud/libocsync.so.%{version} %{buildroot}%{_libdir}/libocsync.so.%{major}
+ln -sf %{_libdir}/owncloud/libocsync.so.%{version} %{buildroot}%{_libdir}/libocsync.so.%{major}
 
 %files
 %doc ChangeLog COPYING
