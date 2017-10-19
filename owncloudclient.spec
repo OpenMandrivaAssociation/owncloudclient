@@ -128,7 +128,7 @@ This package contains development files for %{name}.
 #-----------------------------------------------------------------------------
 
 %prep
-%setup -qn %{oname}-%{version}
+%setup -q
 
 
 %build
@@ -137,7 +137,7 @@ This package contains development files for %{name}.
 	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
 	-DCMAKE_INSTALL_LIBDIR=%{_libdir} \
 	-DCMAKE_BUILD_TYPE=Release \
-	-DCMAKE_INSTALL_SYSCONFDIR=%{_sysconfdir}/%{oname}    
+	-DCMAKE_INSTALL_SYSCONFDIR=%{_sysconfdir}/%{name}    
 
 %make
 
