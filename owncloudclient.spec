@@ -5,7 +5,7 @@
 
 Summary:	The ownCloud Client
 Name:		owncloudclient
-Version:	2.3.3
+Version:	2.4.0
 Release:	1
 License:	GPLv2+
 Group:		Archiving/Backup
@@ -50,6 +50,7 @@ BuildRequires:	pkgconfig(neon) >= 0.29.0
 BuildRequires:	pkgconfig(openssl) >= 1.0.0
 BuildRequires:	pkgconfig(smbclient)
 BuildRequires:	pkgconfig(sqlite3) >= 3.8.0
+BuildRequires:	pkgconfig(zlib)
 Requires:	%{libname} = %{EVRD}
 %rename		%{_lib}ocsync
 %rename		ocsync
