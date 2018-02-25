@@ -73,7 +73,7 @@ Server with your computer.
 %{_datadir}/nemo-python/extensions/syncstate-ownCloud.py
 %{_datadir}/nautilus-python/extensions/syncstate-ownCloud.py
 %{_datadir}/kservices5/ownclouddolphinactionplugin.desktop
-%{_mandir}/man1/*
+#{_mandir}/man1/*
 
 #----------------------------------------------------------------------------
 
