@@ -14,6 +14,7 @@ Url:		https://owncloud.org
 #Source for Cooker.
 #Source0:	https://github.com/owncloud/client/archive/%{version}.zip
 Source0:	%{name}-%{version}.zip
+BuildRequires:	stdc++-devel
 BuildRequires:	doxygen
 BuildRequires:	graphviz
 BuildRequires:	iniparser-devel >= 3.1
