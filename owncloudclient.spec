@@ -10,9 +10,8 @@ Release:	1
 License:	GPLv2+
 Group:		Archiving/Backup
 Url:		https://owncloud.org
-#Source0:	http://download.owncloud.com/desktop/stable/%{name}-%{version}.tar.xz
-#Source for Cooker.
-Source0:	https://github.com/owncloud/client/archive/%{version}/%{name}-%{version}.zip
+Source0:	http://download.owncloud.com/desktop/stable/%{name}-%{version}.tar.xz
+#Source0:	https://github.com/owncloud/client/archive/%{version}/%{name}-%{version}.zip
 #Source0:	%{name}-%{version}.zip
 BuildRequires:	stdc++-devel
 BuildRequires:	doxygen
