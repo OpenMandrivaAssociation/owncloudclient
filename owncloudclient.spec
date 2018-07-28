@@ -5,7 +5,7 @@
 
 Summary:	The ownCloud Client
 Name:		owncloudclient
-Version:	2.4.1
+Version:	2.4.2
 Release:	1
 License:	GPLv2+
 Group:		Archiving/Backup
