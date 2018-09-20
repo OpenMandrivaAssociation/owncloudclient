@@ -135,7 +135,7 @@ This package contains development files for %{name}.
 #-----------------------------------------------------------------------------
 
 %prep
-%setup -q
+%setup -q %{owncloud}-%{10.0.10}-10650
 
 
 %build
