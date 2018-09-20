@@ -135,7 +135,7 @@ This package contains development files for %{name}.
 #-----------------------------------------------------------------------------
 
 %prep
-%setup -q
+%setup -q %{name}-%{version}-10650
 
 
 %build
