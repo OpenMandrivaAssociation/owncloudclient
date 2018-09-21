@@ -155,9 +155,9 @@ chmod +x %{buildroot}%{_datadir}/nemo-python/extensions/syncstate-ownCloud.py
 chmod +x %{buildroot}%{_datadir}/nautilus-python/extensions/syncstate-ownCloud.py
 
 # Dirty fix
-pushd %{buildroot}%{_libdir}
-cp owncloud/libocsync.so.%{major} libocsync.so.%{major}
-popd
+#pushd %{buildroot}%{_libdir}
+#cp owncloud/libocsync.so.%{major} libocsync.so.%{major}
+#popd
 
 
 
