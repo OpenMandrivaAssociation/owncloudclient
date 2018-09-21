@@ -73,11 +73,11 @@ Server with your computer.
 %{_datadir}/owncloud/
 %{_datadir}/applications/owncloud.desktop
 %{_datadir}/caja-python/extensions/syncstate-ownCloud.py
-%{_datadir}/caja-python/extensions/__pycache__/*
+#{_datadir}/caja-python/extensions/__pycache__/*
 %{_datadir}/nemo-python/extensions/syncstate-ownCloud.py
-%{_datadir}/nemo-python/extensions/__pycache__/*
+#{_datadir}/nemo-python/extensions/__pycache__/*
 %{_datadir}/nautilus-python/extensions/syncstate-ownCloud.py
-%{_datadir}/nautilus-python/extensions/__pycache__/*
+#{_datadir}/nautilus-python/extensions/__pycache__/*
 %{_datadir}/kservices5/ownclouddolphinactionplugin.desktop
 #{_mandir}/man1/*
 
@@ -138,6 +138,7 @@ This package contains development files for %{name}.
 %{_datadir}/mime/packages/owncloud.xml
 
 %exclude /usr/lib/debug/usr/lib64/libowncloud_csync.so.2.5.0-2.5.0-1.x86_64.debug
+
 
 #-----------------------------------------------------------------------------
 
