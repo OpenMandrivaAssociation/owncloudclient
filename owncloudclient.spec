@@ -111,9 +111,9 @@ Shared library for ownCloud client.
 
 %files -n %{libocsync}
 %doc ChangeLog COPYING *.md
-%{_libdir}/libocsync.so.%{major}
+#{_libdir}/libocsync.so.%{major}
 #{_libdir}/owncloud/libocsync.so.%{major}
-%{_libdir}/owncloud/libocsync.so.%{version}
+#{_libdir}/owncloud/libocsync.so.%{version}
 
 #----------------------------------------------------------------------------
 
