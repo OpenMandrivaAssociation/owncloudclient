@@ -1,6 +1,6 @@
 %define major 0
 %define libname %mklibname owncloudsync %{major}
-%define libocsync %mklibname ocsync %{major}
+%define libowncloud_csync %mklibname libowncloud_csync %{major}
 %define devname %mklibname owncloudsync -d
 
 Summary:	The ownCloud Client
@@ -55,7 +55,7 @@ BuildRequires:	pkgconfig(smbclient)
 BuildRequires:	pkgconfig(sqlite3) >= 3.8.0
 BuildRequires:	pkgconfig(zlib)
 Requires:	%{libname} = %{EVRD}
-%rename		%{_lib}ocsync
+%rename		%{_lib}owncloud_csync
 %rename		ocsync
 %rename		mirall
 
@@ -101,15 +101,15 @@ Shared library for ownCloud client.
 
 #----------------------------------------------------------------------------
 
-%package -n %{libocsync}
+%package -n %{libowncloud_csync}
 Summary:	Shared library for ownCloud client
 Group:		System/Libraries
 Conflicts:	%{_lib}owncloudsync1 < %{EVRD}
 
-%description -n %{libocsync}
+%description -n %{libowncloud_csync}
 Shared library for ownCloud client.
 
-%files -n %{libocsync}
+%files -n %{libowncloud_csync}
 %doc ChangeLog COPYING *.md
 #{_libdir}/libocsync.so.%{major}
 #{_libdir}/libowncloud_csync.so
