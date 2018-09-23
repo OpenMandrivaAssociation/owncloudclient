@@ -112,7 +112,7 @@ Shared library for ownCloud client.
 %files -n %{libocsync}
 %doc ChangeLog COPYING *.md
 #{_libdir}/libocsync.so.%{major}
-%{_libdir}/libowncloud_csync.so
+#{_libdir}/libowncloud_csync.so
 %{_libdir}/libowncloud_csync.so.%{major}
 %{_libdir}/libowncloud_csync.so.%{version}
 #{_libdir}/owncloud/libocsync.so.%{major}
@@ -132,6 +132,7 @@ This package contains development files for %{name}.
 %files -n %{devname}
 %doc ChangeLog COPYING *.md
 %{_includedir}/owncloudsync
+%{_libdir}/libowncloud_csync.so
 %{_libdir}/libowncloudsync.so
 #{_libdir}/owncloud/libocsync.so
 
