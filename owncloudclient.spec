@@ -86,7 +86,7 @@ Server with your computer.
 %package -n %{libname}
 Summary:	Shared library for ownCloud client
 Group:		System/Libraries
-Requires:	%{libocsync} = %{EVRD}
+Requires:	%{libowncloud_csync} = %{EVRD}
 Conflicts:	%{_lib}owncloudsync1 < %{EVRD}
 
 %description -n %{libname}
