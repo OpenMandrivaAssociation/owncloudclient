@@ -1,6 +1,6 @@
 %define major 0
 %define libname %mklibname owncloudsync %{major}
-%define libocsync %mklibname ocsync %{major}
+%define libowncloud_csync %mklibname libowncloud_csync %{major}
 %define devname %mklibname owncloudsync -d
 
 Summary:	The ownCloud Client
@@ -13,7 +13,6 @@ Url:		https://owncloud.org
 Source0:	http://download.owncloud.com/desktop/stable/%{name}-%{version}.10650.tar.xz
 #Source0:	https://github.com/owncloud/client/archive/%{version}/%{name}-%{version}.zip
 #Source0:	%{name}-%{version}.zip
-Source1:	owncloudclient.rpmlintrc
 BuildRequires:	stdc++-devel
 BuildRequires:	doxygen
 BuildRequires:	graphviz
@@ -56,7 +55,7 @@ BuildRequires:	pkgconfig(smbclient)
 BuildRequires:	pkgconfig(sqlite3) >= 3.8.0
 BuildRequires:	pkgconfig(zlib)
 Requires:	%{libname} = %{EVRD}
-%rename		%{_lib}ocsync
+%rename		%{_lib}owncloud_csync
 %rename		ocsync
 %rename		mirall
 
@@ -87,7 +86,7 @@ Server with your computer.
 %package -n %{libname}
 Summary:	Shared library for ownCloud client
 Group:		System/Libraries
-Requires:	%{libocsync} = %{EVRD}
+Requires:	%{libowncloud_csync} = %{EVRD}
 Conflicts:	%{_lib}owncloudsync1 < %{EVRD}
 
 %description -n %{libname}
@@ -102,18 +101,18 @@ Shared library for ownCloud client.
 
 #----------------------------------------------------------------------------
 
-%package -n %{libocsync}
+%package -n %{libowncloud_csync}
 Summary:	Shared library for ownCloud client
 Group:		System/Libraries
 Conflicts:	%{_lib}owncloudsync1 < %{EVRD}
 
-%description -n %{libocsync}
+%description -n %{libowncloud_csync}
 Shared library for ownCloud client.
 
-%files -n %{libocsync}
+%files -n %{libowncloud_csync}
 %doc ChangeLog COPYING *.md
 #{_libdir}/libocsync.so.%{major}
-%{_libdir}/libowncloud_csync.so
+#{_libdir}/libowncloud_csync.so
 %{_libdir}/libowncloud_csync.so.%{major}
 %{_libdir}/libowncloud_csync.so.%{version}
 #{_libdir}/owncloud/libocsync.so.%{major}
@@ -133,14 +132,13 @@ This package contains development files for %{name}.
 %files -n %{devname}
 %doc ChangeLog COPYING *.md
 %{_includedir}/owncloudsync
+%{_libdir}/libowncloud_csync.so
 %{_libdir}/libowncloudsync.so
 #{_libdir}/owncloud/libocsync.so
 
 %{_datadir}/mime/packages/owncloud.xml
 
-%exclude /usr/lib/debug/usr/lib64/libowncloud_csync.so.2.5.0*
-
-
+%exclude /usr/lib/debug/usr/lib64/libowncloud_csync.so.2.5.0-2.5.0-1.x86_64.debug
 
 #-----------------------------------------------------------------------------
 
