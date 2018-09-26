@@ -138,7 +138,7 @@ This package contains development files for %{name}.
 
 %{_datadir}/mime/packages/owncloud.xml
 
-%exclude /usr/lib/debug/usr/lib64/libowncloud_csync.so.2.5.0*
+%exclude /usr/lib/debug/usr/lib*/libowncloud_csync.so.2.5.0*
 
 
 #-----------------------------------------------------------------------------
