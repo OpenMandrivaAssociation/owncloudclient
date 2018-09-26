@@ -1,16 +1,19 @@
 %define major 0
 %define libname %mklibname owncloudsync %{major}
-%define libocsync %mklibname ocsync %{major}
+%define libowncloud_csync %mklibname libowncloud_csync %{major}
 %define devname %mklibname owncloudsync -d
 
 Summary:	The ownCloud Client
 Name:		owncloudclient
-Version:	2.4.3
+Version:	2.5.0
 Release:	1
 License:	GPLv2+
 Group:		Archiving/Backup
 Url:		https://owncloud.org
-Source0:	http://download.owncloud.com/desktop/stable/%{name}-%{version}.tar.xz
+Source0:	http://download.owncloud.com/desktop/stable/%{name}-%{version}.10650.tar.xz
+#Source0:	https://github.com/owncloud/client/archive/%{version}/%{name}-%{version}.zip
+#Source0:	%{name}-%{version}.zip
+BuildRequires:	stdc++-devel
 BuildRequires:	doxygen
 BuildRequires:	graphviz
 BuildRequires:	iniparser-devel >= 3.1
@@ -52,7 +55,7 @@ BuildRequires:	pkgconfig(smbclient)
 BuildRequires:	pkgconfig(sqlite3) >= 3.8.0
 BuildRequires:	pkgconfig(zlib)
 Requires:	%{libname} = %{EVRD}
-%rename		%{_lib}ocsync
+%rename		%{_lib}owncloud_csync
 %rename		ocsync
 %rename		mirall
 
@@ -70,8 +73,11 @@ Server with your computer.
 %{_datadir}/owncloud/
 %{_datadir}/applications/owncloud.desktop
 %{_datadir}/caja-python/extensions/syncstate-ownCloud.py
+#{_datadir}/caja-python/extensions/__pycache__/*
 %{_datadir}/nemo-python/extensions/syncstate-ownCloud.py
+#{_datadir}/nemo-python/extensions/__pycache__/*
 %{_datadir}/nautilus-python/extensions/syncstate-ownCloud.py
+#{_datadir}/nautilus-python/extensions/__pycache__/*
 %{_datadir}/kservices5/ownclouddolphinactionplugin.desktop
 #{_mandir}/man1/*
 
@@ -80,7 +86,7 @@ Server with your computer.
 %package -n %{libname}
 Summary:	Shared library for ownCloud client
 Group:		System/Libraries
-Requires:	%{libocsync} = %{EVRD}
+Requires:	%{libowncloud_csync} = %{EVRD}
 Conflicts:	%{_lib}owncloudsync1 < %{EVRD}
 
 %description -n %{libname}
@@ -95,19 +101,23 @@ Shared library for ownCloud client.
 
 #----------------------------------------------------------------------------
 
-%package -n %{libocsync}
+%package -n %{libowncloud_csync}
 Summary:	Shared library for ownCloud client
 Group:		System/Libraries
 Conflicts:	%{_lib}owncloudsync1 < %{EVRD}
+Obsoletes:	%{_lib}ocsync
 
-%description -n %{libocsync}
+%description -n %{libowncloud_csync}
 Shared library for ownCloud client.
 
-%files -n %{libocsync}
+%files -n %{libowncloud_csync}
 %doc ChangeLog COPYING *.md
-%{_libdir}/libocsync.so.%{major}
-%{_libdir}/owncloud/libocsync.so.%{major}
-%{_libdir}/owncloud/libocsync.so.%{version}
+#{_libdir}/libocsync.so.%{major}
+#{_libdir}/libowncloud_csync.so
+%{_libdir}/libowncloud_csync.so.%{major}
+%{_libdir}/libowncloud_csync.so.%{version}
+#{_libdir}/owncloud/libocsync.so.%{major}
+#{_libdir}/owncloud/libocsync.so.%{version}
 
 #----------------------------------------------------------------------------
 
@@ -123,13 +133,19 @@ This package contains development files for %{name}.
 %files -n %{devname}
 %doc ChangeLog COPYING *.md
 %{_includedir}/owncloudsync
+%{_libdir}/libowncloud_csync.so
 %{_libdir}/libowncloudsync.so
-%{_libdir}/owncloud/libocsync.so
+#{_libdir}/owncloud/libocsync.so
+
+%{_datadir}/mime/packages/owncloud.xml
+
+%exclude /usr/lib/debug/usr/lib64/libowncloud_csync.so.2.5.0*
+
 
 #-----------------------------------------------------------------------------
 
 %prep
-%setup -q
+%setup -qn %{name}-%{version}.10650
 
 
 %build
@@ -149,9 +165,9 @@ chmod +x %{buildroot}%{_datadir}/nemo-python/extensions/syncstate-ownCloud.py
 chmod +x %{buildroot}%{_datadir}/nautilus-python/extensions/syncstate-ownCloud.py
 
 # Dirty fix
-pushd %{buildroot}%{_libdir}
-cp owncloud/libocsync.so.%{major} libocsync.so.%{major}
-popd
+#pushd %{buildroot}%{_libdir}
+#cp owncloud/libocsync.so.%{major} libocsync.so.%{major}
+#popd
 
 
 
