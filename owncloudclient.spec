@@ -105,7 +105,6 @@ Shared library for ownCloud client.
 Summary:	Shared library for ownCloud client
 Group:		System/Libraries
 Conflicts:	%{_lib}owncloudsync1 < %{EVRD}
-Obsoletes:	%{_lib}ocsync
 
 %description -n %{libowncloud_csync}
 Shared library for ownCloud client.
