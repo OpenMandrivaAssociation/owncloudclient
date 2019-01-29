@@ -5,12 +5,12 @@
 
 Summary:	The ownCloud Client
 Name:		owncloudclient
-Version:	2.5.1
+Version:	2.5.2
 Release:	1
 License:	GPLv2+
 Group:		Archiving/Backup
 Url:		https://owncloud.org
-Source0:	http://download.owncloud.com/desktop/stable/%{name}-%{version}.10973.tar.xz
+Source0:	http://download.owncloud.com/desktop/stable/%{name}-%{version}.11383.tar.xz
 #Source0:	https://github.com/owncloud/client/archive/%{version}/%{name}-%{version}.zip
 #Source0:	%{name}-%{version}.zip
 BuildRequires:	stdc++-devel
