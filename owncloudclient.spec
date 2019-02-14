@@ -70,7 +70,7 @@ Server with your computer.
 %{_bindir}/owncloud
 %{_bindir}/owncloudcmd
 %{_iconsdir}/hicolor/*/*/*.png
-%{_datadir}/owncloud/
+#{_datadir}/owncloud/
 %{_datadir}/applications/owncloud.desktop
 %{_datadir}/caja-python/extensions/syncstate-ownCloud.py
 %{_datadir}/caja-python/extensions/__pycache__/*
