@@ -65,7 +65,7 @@ Server with your computer.
 
 %files
 %doc ChangeLog COPYING README.md
-%doc build/doc/html/unthemed/*
+#doc build/doc/html/unthemed/*
 %config(noreplace) %{_sysconfdir}/ownCloud/sync-exclude.lst
 %{_bindir}/owncloud
 %{_bindir}/owncloudcmd
