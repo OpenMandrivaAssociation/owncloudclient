@@ -5,12 +5,12 @@
 
 Summary:	The ownCloud Client
 Name:		owncloudclient
-Version:	2.5.4
+Version:	2.6.0
 Release:	1
 License:	GPLv2+
 Group:		Archiving/Backup
 Url:		https://owncloud.org
-Source0:	http://download.owncloud.com/desktop/stable/%{name}-%{version}.11654.tar.xz
+Source0:	http://download.owncloud.com/desktop/stable/%{name}-%{version}.13018.tar.xz
 #Source0:	https://github.com/owncloud/client/archive/%{version}/%{name}-%{version}.zip
 #Source0:	%{name}-%{version}.zip
 BuildRequires:	stdc++-devel
@@ -65,7 +65,7 @@ Server with your computer.
 
 %files
 %doc ChangeLog COPYING README.md
-%doc build/doc/html/unthemed/*
+#doc build/doc/html/unthemed/*
 %config(noreplace) %{_sysconfdir}/ownCloud/sync-exclude.lst
 %{_bindir}/owncloud
 %{_bindir}/owncloudcmd
@@ -97,6 +97,7 @@ Shared library for ownCloud client.
 %{_libdir}/libowncloudsync.so.%{major}
 %{_libdir}/libownclouddolphinpluginhelper.so
 %{_libdir}/plugins/*.so
+%{_libdir}/ownCloud/plugins/owncloudsync_vfs_suffix.so
 %{_libdir}/plugins/kf5/overlayicon/*.so
 
 #----------------------------------------------------------------------------
@@ -143,7 +144,7 @@ This package contains development files for %{name}.
 #-----------------------------------------------------------------------------
 
 %prep
-%setup -qn %{name}-%{version}.11654
+%setup -qn %{name}-%{version}.13018
 
 
 %build
