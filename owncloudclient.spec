@@ -12,7 +12,7 @@ Group:		Archiving/Backup
 Url:		https://owncloud.org
 Source0:	http://download.owncloud.com/desktop/stable/%{name}-%{version}.13407.tar.xz
 #Source0:	https://github.com/owncloud/client/archive/%{version}/%{name}-%{version}.zip
-#Source0:	%{name}-%{version}.zip
+Patch0:		owncloudclient-2.6.1-fix-build-with-qt5.15-missing-include.patch
 BuildRequires:	stdc++-devel
 BuildRequires:	doxygen
 BuildRequires:	graphviz
@@ -145,6 +145,7 @@ This package contains development files for %{name}.
 
 %prep
 %setup -qn %{name}-%{version}.13407
+%autopatch -p1
 
 
 %build
