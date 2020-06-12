@@ -5,8 +5,8 @@
 
 Summary:	The ownCloud Client
 Name:		owncloudclient
-Version:	2.6.0
-Release:	2
+Version:	2.6.1
+Release:	1
 License:	GPLv2+
 Group:		Archiving/Backup
 Url:		https://owncloud.org
