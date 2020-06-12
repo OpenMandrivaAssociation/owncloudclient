@@ -5,14 +5,14 @@
 
 Summary:	The ownCloud Client
 Name:		owncloudclient
-Version:	2.6.0
-Release:	2
+Version:	2.6.1
+Release:	1
 License:	GPLv2+
 Group:		Archiving/Backup
 Url:		https://owncloud.org
-Source0:	http://download.owncloud.com/desktop/stable/%{name}-%{version}.13018.tar.xz
+Source0:	http://download.owncloud.com/desktop/stable/%{name}-%{version}.13407.tar.xz
 #Source0:	https://github.com/owncloud/client/archive/%{version}/%{name}-%{version}.zip
-#Source0:	%{name}-%{version}.zip
+Patch0:		owncloudclient-2.6.1-fix-build-with-qt5.15-missing-include.patch
 BuildRequires:	stdc++-devel
 BuildRequires:	doxygen
 BuildRequires:	graphviz
@@ -73,11 +73,11 @@ Server with your computer.
 %{_datadir}/owncloud/
 %{_datadir}/applications/owncloud.desktop
 %{_datadir}/caja-python/extensions/syncstate-ownCloud.py
-%{_datadir}/caja-python/extensions/__pycache__/*
+#{_datadir}/caja-python/extensions/__pycache__/*
 %{_datadir}/nemo-python/extensions/syncstate-ownCloud.py
-%{_datadir}/nemo-python/extensions/__pycache__/*
+#{_datadir}/nemo-python/extensions/__pycache__/*
 %{_datadir}/nautilus-python/extensions/syncstate-ownCloud.py
-%{_datadir}/nautilus-python/extensions/__pycache__/*
+#{_datadir}/nautilus-python/extensions/__pycache__/*
 %{_datadir}/kservices5/ownclouddolphinactionplugin.desktop
 #{_mandir}/man1/*
 
@@ -144,7 +144,8 @@ This package contains development files for %{name}.
 #-----------------------------------------------------------------------------
 
 %prep
-%setup -qn %{name}-%{version}.13018
+%setup -qn %{name}-%{version}.13407
+%autopatch -p1
 
 
 %build
