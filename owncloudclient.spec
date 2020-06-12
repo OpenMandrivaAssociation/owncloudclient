@@ -73,11 +73,11 @@ Server with your computer.
 %{_datadir}/owncloud/
 %{_datadir}/applications/owncloud.desktop
 %{_datadir}/caja-python/extensions/syncstate-ownCloud.py
-%{_datadir}/caja-python/extensions/__pycache__/*
+#{_datadir}/caja-python/extensions/__pycache__/*
 %{_datadir}/nemo-python/extensions/syncstate-ownCloud.py
-%{_datadir}/nemo-python/extensions/__pycache__/*
+#{_datadir}/nemo-python/extensions/__pycache__/*
 %{_datadir}/nautilus-python/extensions/syncstate-ownCloud.py
-%{_datadir}/nautilus-python/extensions/__pycache__/*
+#{_datadir}/nautilus-python/extensions/__pycache__/*
 %{_datadir}/kservices5/ownclouddolphinactionplugin.desktop
 #{_mandir}/man1/*
 
