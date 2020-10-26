@@ -64,7 +64,7 @@ The ownCloud Desktop Client is a tool to synchronize files from ownCloud
 Server with your computer.
 
 %files
-%doc ChangeLog COPYING README.md
+%doc COPYING README.md
 #doc build/doc/html/unthemed/*
 %config(noreplace) %{_sysconfdir}/ownCloud/sync-exclude.lst
 %{_bindir}/owncloud
@@ -111,7 +111,7 @@ Conflicts:	%{_lib}owncloudsync1 < %{EVRD}
 Shared library for ownCloud client.
 
 %files -n %{libowncloud_csync}
-%doc ChangeLog COPYING *.md
+%doc COPYING *.md
 #{_libdir}/libocsync.so.%{major}
 #{_libdir}/libowncloud_csync.so
 %{_libdir}/libowncloud_csync.so.%{major}
@@ -131,7 +131,7 @@ Provides:	%{name}-devel = %{EVRD}
 This package contains development files for %{name}.
 
 %files -n %{devname}
-%doc ChangeLog COPYING *.md
+%doc COPYING *.md
 %{_includedir}/owncloudsync
 %{_libdir}/libowncloud_csync.so
 %{_libdir}/libowncloudsync.so
