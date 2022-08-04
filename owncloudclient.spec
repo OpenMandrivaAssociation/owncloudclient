@@ -5,14 +5,15 @@
 
 Summary:	The ownCloud Client
 Name:		owncloudclient
-Version:	2.6.3
+Version:	2.10.1
 Release:	1
 License:	GPLv2+
 Group:		Archiving/Backup
 Url:		https://owncloud.org
-Source0:	http://download.owncloud.com/desktop/stable/%{name}-%{version}.14058.tar.xz
+Source0:	https://download.owncloud.com/desktop/ownCloud/stable/2.10.1.7389/source/ownCloud-%{version}.7389.tar.xz
+#Source0:	http://download.owncloud.com/desktop/stable/%{name}-%{version}.14058.tar.xz
 #Source0:	https://github.com/owncloud/client/archive/%{version}/%{name}-%{version}.zip
-Patch0:		owncloudclient-2.6.1-fix-build-with-qt5.15-missing-include.patch
+
 BuildRequires:	stdc++-devel
 BuildRequires:	doxygen
 BuildRequires:	graphviz
@@ -70,7 +71,7 @@ Server with your computer.
 %{_bindir}/owncloud
 %{_bindir}/owncloudcmd
 %{_iconsdir}/hicolor/*/*/*.png
-%{_datadir}/owncloud/
+#{_datadir}/owncloud/
 %{_datadir}/applications/owncloud.desktop
 %{_datadir}/caja-python/extensions/syncstate-ownCloud.py
 #{_datadir}/caja-python/extensions/__pycache__/*
@@ -97,7 +98,7 @@ Shared library for ownCloud client.
 %{_libdir}/libowncloudsync.so.%{major}
 %{_libdir}/libownclouddolphinpluginhelper.so
 %{_libdir}/plugins/*.so
-%{_libdir}/ownCloud/plugins/owncloudsync_vfs_suffix.so
+#{_libdir}/ownCloud/plugins/owncloudsync_vfs_suffix.so
 %{_libdir}/plugins/kf5/overlayicon/*.so
 
 #----------------------------------------------------------------------------
@@ -144,7 +145,7 @@ This package contains development files for %{name}.
 #-----------------------------------------------------------------------------
 
 %prep
-%setup -qn %{name}-%{version}.14058
+%setup -qn ownCloud-%{version}.7389
 %autopatch -p1
 
 
