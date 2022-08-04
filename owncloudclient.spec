@@ -98,7 +98,7 @@ Shared library for ownCloud client.
 %{_libdir}/libowncloudsync.so.%{major}
 %{_libdir}/libownclouddolphinpluginhelper.so
 %{_libdir}/plugins/*.so
-%{_libdir}/ownCloud/plugins/owncloudsync_vfs_suffix.so
+#{_libdir}/ownCloud/plugins/owncloudsync_vfs_suffix.so
 %{_libdir}/plugins/kf5/overlayicon/*.so
 
 #----------------------------------------------------------------------------
