@@ -145,7 +145,7 @@ This package contains development files for %{name}.
 #-----------------------------------------------------------------------------
 
 %prep
-%setup -qn %{name}-%{version}.7389
+%setup -qn ownCloud-%{version}.7389
 %autopatch -p1
 
 
