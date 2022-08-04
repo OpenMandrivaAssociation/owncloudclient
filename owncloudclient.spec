@@ -13,7 +13,7 @@ Url:		https://owncloud.org
 Source0:	https://download.owncloud.com/desktop/ownCloud/stable/2.10.1.7389/source/ownCloud-%{version}.7389.tar.xz
 #Source0:	http://download.owncloud.com/desktop/stable/%{name}-%{version}.14058.tar.xz
 #Source0:	https://github.com/owncloud/client/archive/%{version}/%{name}-%{version}.zip
-Patch0:		owncloudclient-2.6.1-fix-build-with-qt5.15-missing-include.patch
+#Patch0:		owncloudclient-2.6.1-fix-build-with-qt5.15-missing-include.patch
 BuildRequires:	stdc++-devel
 BuildRequires:	doxygen
 BuildRequires:	graphviz
