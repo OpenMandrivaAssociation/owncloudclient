@@ -5,12 +5,12 @@
 
 Summary:	The ownCloud Client
 Name:		owncloudclient
-Version:	2.10.1
+Version:	2.11.1
 Release:	1
 License:	GPLv2+
 Group:		Archiving/Backup
 Url:		https://owncloud.org
-Source0:	https://download.owncloud.com/desktop/ownCloud/stable/2.10.1.7389/source/ownCloud-%{version}.7389.tar.xz
+Source0:	https://download.owncloud.com/desktop/ownCloud/stable/2.11.1.8946/source/ownCloud-%{version}.8946.tar.xz
 #Source0:	http://download.owncloud.com/desktop/stable/%{name}-%{version}.14058.tar.xz
 #Source0:	https://github.com/owncloud/client/archive/%{version}/%{name}-%{version}.zip
 
@@ -145,7 +145,7 @@ This package contains development files for %{name}.
 #-----------------------------------------------------------------------------
 
 %prep
-%setup -qn ownCloud-%{version}.7389
+%setup -qn ownCloud-%{version}.8946
 %autopatch -p1
 
 
