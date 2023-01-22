@@ -3,6 +3,8 @@
 %define libowncloud_csync %mklibname libowncloud_csync %{major}
 %define devname %mklibname owncloudsync -d
 
+%define vversion 3.0.0
+
 Summary:	The ownCloud Client
 Name:		owncloudclient
 Version:	3.0.0.9215
@@ -95,7 +97,7 @@ Conflicts:	%{_lib}owncloudsync1 < %{EVRD}
 Shared library for ownCloud client.
 
 %files -n %{libname}
-%{_libdir}/libowncloudsync.so.%{version}
+%{_libdir}/libowncloudsync.so.%{vversion}
 %{_libdir}/libowncloudsync.so.%{major}
 %{_libdir}/libownclouddolphinpluginhelper.so
 %{_libdir}/plugins/*.so
@@ -117,9 +119,9 @@ Shared library for ownCloud client.
 #{_libdir}/libocsync.so.%{major}
 #{_libdir}/libowncloud_csync.so
 %{_libdir}/libowncloud_csync.so.%{major}
-%{_libdir}/libowncloud_csync.so.%{version}
+%{_libdir}/libowncloud_csync.so.%{vversion}
 #{_libdir}/owncloud/libocsync.so.%{major}
-#{_libdir}/owncloud/libocsync.so.%{version}
+#{_libdir}/owncloud/libocsync.so.%{vversion}
 
 #----------------------------------------------------------------------------
 
@@ -140,8 +142,6 @@ This package contains development files for %{name}.
 #{_libdir}/owncloud/libocsync.so
 
 %{_datadir}/mime/packages/owncloud.xml
-
-%exclude /usr/lib/debug/usr/lib*/libowncloud_csync.so.2.5.0-2.5.0-1.x86_64.debug
 
 #-----------------------------------------------------------------------------
 
