@@ -69,21 +69,15 @@ Server with your computer.
 
 %files
 %doc COPYING README.md
-#doc build/doc/html/unthemed/*
 %config(noreplace) %{_sysconfdir}/ownCloud/sync-exclude.lst
 %{_bindir}/owncloud
 %{_bindir}/owncloudcmd
 %{_iconsdir}/hicolor/*/*/*.png
-#{_datadir}/owncloud/
 %{_datadir}/applications/owncloud.desktop
 %{_datadir}/caja-python/extensions/syncstate-ownCloud.py
-#{_datadir}/caja-python/extensions/__pycache__/*
 %{_datadir}/nemo-python/extensions/syncstate-ownCloud.py
-#{_datadir}/nemo-python/extensions/__pycache__/*
 %{_datadir}/nautilus-python/extensions/syncstate-ownCloud.py
-#{_datadir}/nautilus-python/extensions/__pycache__/*
 %{_datadir}/kservices5/ownclouddolphinactionplugin.desktop
-#{_mandir}/man1/*
 
 #----------------------------------------------------------------------------
 
@@ -101,8 +95,9 @@ Shared library for ownCloud client.
 %{_libdir}/libowncloudsync.so.%{major}
 %{_libdir}/libownclouddolphinpluginhelper.so
 %{_libdir}/plugins/*.so
-#{_libdir}/ownCloud/plugins/owncloudsync_vfs_suffix.so
 %{_libdir}/plugins/kf5/overlayicon/*.so
+%{_libdir}/libowncloudResources.so.%{major}
+%{_libdir}/libowncloudResources.so.%{vversion}
 
 #----------------------------------------------------------------------------
 
@@ -116,12 +111,8 @@ Shared library for ownCloud client.
 
 %files -n %{libowncloud_csync}
 %doc COPYING *.md
-#{_libdir}/libocsync.so.%{major}
-#{_libdir}/libowncloud_csync.so
 %{_libdir}/libowncloud_csync.so.%{major}
 %{_libdir}/libowncloud_csync.so.%{vversion}
-#{_libdir}/owncloud/libocsync.so.%{major}
-#{_libdir}/owncloud/libocsync.so.%{vversion}
 
 #----------------------------------------------------------------------------
 
@@ -136,11 +127,11 @@ This package contains development files for %{name}.
 
 %files -n %{devname}
 %doc COPYING *.md
-#{_includedir}/owncloudsync
+%{_includedir}/ownCloud
 %{_libdir}/libowncloud_csync.so
 %{_libdir}/libowncloudsync.so
-#{_libdir}/owncloud/libocsync.so
-
+%{_libdir}/libowncloudResources.so
+%{_libdir}/cmake/ownCloud/
 %{_datadir}/mime/packages/owncloud.xml
 
 #-----------------------------------------------------------------------------
