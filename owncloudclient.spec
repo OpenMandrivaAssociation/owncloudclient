@@ -3,14 +3,16 @@
 %define libowncloud_csync %mklibname libowncloud_csync %{major}
 %define devname %mklibname owncloudsync -d
 
+%define vversion 3.0.0
+
 Summary:	The ownCloud Client
 Name:		owncloudclient
-Version:	2.11.1
+Version:	3.0.0.9215
 Release:	1
 License:	GPLv2+
 Group:		Archiving/Backup
 Url:		https://owncloud.org
-Source0:	https://download.owncloud.com/desktop/ownCloud/stable/2.11.1.8946/source/ownCloud-%{version}.8946.tar.xz
+Source0:	https://download.owncloud.com/desktop/ownCloud/stable/%{version}/source/ownCloud-%{version}.tar.xz
 #Source0:	http://download.owncloud.com/desktop/stable/%{name}-%{version}.14058.tar.xz
 #Source0:	https://github.com/owncloud/client/archive/%{version}/%{name}-%{version}.zip
 
@@ -18,6 +20,7 @@ BuildRequires:	stdc++-devel
 BuildRequires:	doxygen
 BuildRequires:	graphviz
 BuildRequires:	iniparser-devel >= 3.1
+BuildRequires:  libre-graph-api-cpp-qt-client
 BuildRequires:	python-sphinx
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt5Core)
@@ -66,21 +69,15 @@ Server with your computer.
 
 %files
 %doc COPYING README.md
-#doc build/doc/html/unthemed/*
 %config(noreplace) %{_sysconfdir}/ownCloud/sync-exclude.lst
 %{_bindir}/owncloud
 %{_bindir}/owncloudcmd
 %{_iconsdir}/hicolor/*/*/*.png
-#{_datadir}/owncloud/
 %{_datadir}/applications/owncloud.desktop
 %{_datadir}/caja-python/extensions/syncstate-ownCloud.py
-#{_datadir}/caja-python/extensions/__pycache__/*
 %{_datadir}/nemo-python/extensions/syncstate-ownCloud.py
-#{_datadir}/nemo-python/extensions/__pycache__/*
 %{_datadir}/nautilus-python/extensions/syncstate-ownCloud.py
-#{_datadir}/nautilus-python/extensions/__pycache__/*
 %{_datadir}/kservices5/ownclouddolphinactionplugin.desktop
-#{_mandir}/man1/*
 
 #----------------------------------------------------------------------------
 
@@ -94,12 +91,13 @@ Conflicts:	%{_lib}owncloudsync1 < %{EVRD}
 Shared library for ownCloud client.
 
 %files -n %{libname}
-%{_libdir}/libowncloudsync.so.%{version}
+%{_libdir}/libowncloudsync.so.%{vversion}
 %{_libdir}/libowncloudsync.so.%{major}
 %{_libdir}/libownclouddolphinpluginhelper.so
 %{_libdir}/plugins/*.so
-#{_libdir}/ownCloud/plugins/owncloudsync_vfs_suffix.so
 %{_libdir}/plugins/kf5/overlayicon/*.so
+%{_libdir}/libowncloudResources.so.%{major}
+%{_libdir}/libowncloudResources.so.%{vversion}
 
 #----------------------------------------------------------------------------
 
@@ -113,12 +111,8 @@ Shared library for ownCloud client.
 
 %files -n %{libowncloud_csync}
 %doc COPYING *.md
-#{_libdir}/libocsync.so.%{major}
-#{_libdir}/libowncloud_csync.so
 %{_libdir}/libowncloud_csync.so.%{major}
-%{_libdir}/libowncloud_csync.so.%{version}
-#{_libdir}/owncloud/libocsync.so.%{major}
-#{_libdir}/owncloud/libocsync.so.%{version}
+%{_libdir}/libowncloud_csync.so.%{vversion}
 
 #----------------------------------------------------------------------------
 
@@ -133,19 +127,17 @@ This package contains development files for %{name}.
 
 %files -n %{devname}
 %doc COPYING *.md
-%{_includedir}/owncloudsync
+%{_includedir}/ownCloud
 %{_libdir}/libowncloud_csync.so
 %{_libdir}/libowncloudsync.so
-#{_libdir}/owncloud/libocsync.so
-
+%{_libdir}/libowncloudResources.so
+%{_libdir}/cmake/ownCloud/
 %{_datadir}/mime/packages/owncloud.xml
-
-%exclude /usr/lib/debug/usr/lib*/libowncloud_csync.so.2.5.0-2.5.0-1.x86_64.debug
 
 #-----------------------------------------------------------------------------
 
 %prep
-%setup -qn ownCloud-%{version}.8946
+%setup -qn ownCloud-%{version}
 %autopatch -p1
 
 
