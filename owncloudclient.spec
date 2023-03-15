@@ -3,7 +3,7 @@
 %define libowncloud_csync %mklibname libowncloud_csync %{major}
 %define devname %mklibname owncloudsync -d
 
-%define vversion 3.0.0
+%define vversion 3.2.1
 
 Summary:	The ownCloud Client
 Name:		owncloudclient
