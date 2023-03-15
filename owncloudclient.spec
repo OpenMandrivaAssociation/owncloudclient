@@ -7,7 +7,7 @@
 
 Summary:	The ownCloud Client
 Name:		owncloudclient
-Version:	3.0.0.9215
+Version:	3.2.1.10355
 Release:	1
 License:	GPLv2+
 Group:		Archiving/Backup
