@@ -21,6 +21,7 @@ BuildRequires:	doxygen
 BuildRequires:	graphviz
 BuildRequires:	iniparser-devel >= 3.1
 BuildRequires:  libre-graph-api-cpp-qt-client
+BuildRequires:	cmake(LibreGraphAPI)
 BuildRequires:	python-sphinx
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt5Core)
