@@ -3,11 +3,11 @@
 %define libowncloud_csync %mklibname libowncloud_csync %{major}
 %define devname %mklibname owncloudsync -d
 
-%define vversion 4.1.0
+%define vversion 4.2.0
 
 Summary:	The ownCloud Client
 Name:		owncloudclient
-Version:	4.1.0.11250
+Version:	4.2.0.11670
 Release:	1
 License:	GPLv2+
 Group:		Archiving/Backup
