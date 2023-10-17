@@ -24,22 +24,22 @@ BuildRequires:  libre-graph-api-cpp-qt-client
 BuildRequires:	cmake(LibreGraphAPI)
 BuildRequires:	python-sphinx
 BuildRequires:	cmake(ECM)
-BuildRequires:	cmake(Qt5Core)
-BuildRequires:	cmake(Qt5Network)
-BuildRequires:	cmake(Qt5Xml)
-BuildRequires:	cmake(Qt5WebKitWidgets)
-BuildRequires:	cmake(Qt5WebKit)
-BuildRequires:	cmake(Qt5PrintSupport)
-BuildRequires:	cmake(Qt5Quick)
-BuildRequires:	cmake(Qt5Widgets)
-BuildRequires:	cmake(Qt5Test)
-BuildRequires:	cmake(Qt5DBus)
-BuildRequires:	cmake(Qt5LinguistTools)
-BuildRequires:	cmake(Qt5Keychain)
-BuildRequires:	cmake(Qt5Concurrent)
-BuildRequires:	cmake(Qt5Gui)
-BuildRequires:	cmake(Qt5Sql)
-BuildRequires:	cmake(Qt5WebKit)
+BuildRequires:	cmake(Qt6)
+BuildRequires:	cmake(Qt6Core)
+BuildRequires:	cmake(Qt6Network)
+BuildRequires:	cmake(Qt6Xml)
+BuildRequires:	cmake(Qt6WebKitWidgets)
+#BuildRequires:	cmake(Qt5WebKit)
+BuildRequires:	cmake(Qt6PrintSupport)
+BuildRequires:	cmake(Qt6Quick)
+BuildRequires:	cmake(Qt6Widgets)
+BuildRequires:	cmake(Qt6Test)
+BuildRequires:	cmake(Qt6DBus)
+BuildRequires:	cmake(Qt6LinguistTools)
+BuildRequires:	cmake(Qt6Keychain)
+BuildRequires:	cmake(Qt6Concurrent)
+BuildRequires:	cmake(Qt6Gui)
+BuildRequires:	cmake(Qt6Sql)
 BuildRequires:	cmake(KF5Archive)
 BuildRequires:	cmake(KF5Bookmarks)
 BuildRequires:	cmake(KF5CoreAddons)
@@ -143,7 +143,7 @@ This package contains development files for %{name}.
 
 
 %build
-%cmake_qt5	-DINOTIFY_LIBRARY="%{_libdir}/libc.so" \
+%cmake	-DINOTIFY_LIBRARY="%{_libdir}/libc.so" \
 	-DWITH_DOC="True" \
 	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
 	-DCMAKE_INSTALL_LIBDIR=%{_libdir} \
