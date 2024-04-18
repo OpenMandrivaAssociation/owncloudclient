@@ -3,11 +3,11 @@
 %define libowncloud_csync %mklibname libowncloud_csync %{major}
 %define devname %mklibname owncloudsync -d
 
-%define vversion 4.2.0
+%define vversion 5.2.1
 
 Summary:	The ownCloud Client
 Name:		owncloudclient
-Version:	4.2.0.11670
+Version:	5.2.1.13040
 Release:	1
 License:	GPLv2+
 Group:		Archiving/Backup
@@ -22,35 +22,36 @@ BuildRequires:	graphviz
 BuildRequires:	iniparser-devel >= 3.1
 BuildRequires:  libre-graph-api-cpp-qt-client
 BuildRequires:	cmake(LibreGraphAPI)
+BuildRequires:	cmake(KDSingleApplication-qt6)
 BuildRequires:	python-sphinx
 BuildRequires:	cmake(ECM)
-BuildRequires:	cmake(Qt5Core)
-BuildRequires:	cmake(Qt5Network)
-BuildRequires:	cmake(Qt5Xml)
-BuildRequires:	cmake(Qt5WebKitWidgets)
-BuildRequires:	cmake(Qt5WebKit)
-BuildRequires:	cmake(Qt5PrintSupport)
-BuildRequires:	cmake(Qt5Quick)
-BuildRequires:	cmake(Qt5Widgets)
-BuildRequires:	cmake(Qt5Test)
-BuildRequires:	cmake(Qt5DBus)
-BuildRequires:	cmake(Qt5LinguistTools)
-BuildRequires:	cmake(Qt5Keychain)
-BuildRequires:	cmake(Qt5Concurrent)
-BuildRequires:	cmake(Qt5Gui)
-BuildRequires:	cmake(Qt5Sql)
-BuildRequires:	cmake(Qt5WebKit)
-BuildRequires:	cmake(KF5Archive)
-BuildRequires:	cmake(KF5Bookmarks)
-BuildRequires:	cmake(KF5CoreAddons)
-BuildRequires:	cmake(KF5Config)
-BuildRequires:	cmake(KF5ConfigWidgets)
-BuildRequires:	cmake(KF5DBusAddons)
-BuildRequires:	cmake(KF5KIO)
-BuildRequires:	cmake(KF5KDELibs4Support)
-BuildRequires:	cmake(KF5Parts)
-BuildRequires:	cmake(KF5Activities)
-BuildRequires:	cmake(KF5Konq)
+BuildRequires:	cmake(Qt6)
+BuildRequires:	cmake(Qt6Core)
+BuildRequires:	cmake(Qt6Network)
+BuildRequires:	cmake(Qt6Xml)
+#BuildRequires:	cmake(Qt6WebKitWidgets)
+#BuildRequires:	cmake(Qt5WebKit)
+BuildRequires:	cmake(Qt6PrintSupport)
+BuildRequires:	cmake(Qt6Quick)
+BuildRequires:	cmake(Qt6Widgets)
+BuildRequires:	cmake(Qt6Test)
+BuildRequires:	cmake(Qt6DBus)
+BuildRequires:	cmake(Qt6LinguistTools)
+BuildRequires:	cmake(Qt6Keychain)
+BuildRequires:	cmake(Qt6Concurrent)
+BuildRequires:	cmake(Qt6Gui)
+BuildRequires:	cmake(Qt6Sql)
+#BuildRequires:	cmake(KF5Archive)
+#BuildRequires:	cmake(KF5Bookmarks)
+#BuildRequires:	cmake(KF5CoreAddons)
+#BuildRequires:	cmake(KF5Config)
+#BuildRequires:	cmake(KF5ConfigWidgets)
+#BuildRequires:	cmake(KF5DBusAddons)
+#BuildRequires:	cmake(KF5KIO)
+#BuildRequires:	cmake(KF5KDELibs4Support)
+#BuildRequires:	cmake(KF5Parts)
+#BuildRequires:	cmake(KF5Activities)
+#BuildRequires:	cmake(KF5Konq)
 BuildRequires:	pkgconfig(check) >= 0.9.5
 BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:	pkgconfig(libssh2)
@@ -70,15 +71,17 @@ Server with your computer.
 
 %files
 %doc COPYING README.md
-%config(noreplace) %{_sysconfdir}/ownCloud/sync-exclude.lst
+#config(noreplace) %{_sysconfdir}/ownCloud/sync-exclude.lst
 %{_bindir}/owncloud
 %{_bindir}/owncloudcmd
 %{_iconsdir}/hicolor/*/*/*.png
 %{_datadir}/applications/owncloud.desktop
-%{_datadir}/caja-python/extensions/syncstate-ownCloud.py
-%{_datadir}/nemo-python/extensions/syncstate-ownCloud.py
-%{_datadir}/nautilus-python/extensions/syncstate-ownCloud.py
-%{_datadir}/kservices5/ownclouddolphinactionplugin.desktop
+%{_sysconfdir}/owncloudclient/ownCloud/sync-exclude.lst
+%{_datadir}/applications/owncloudcmd.desktop
+#{_datadir}/caja-python/extensions/syncstate-ownCloud.py
+#{_datadir}/nemo-python/extensions/syncstate-ownCloud.py
+#{_datadir}/nautilus-python/extensions/syncstate-ownCloud.py
+#{_datadir}/kservices5/ownclouddolphinactionplugin.desktop
 
 #----------------------------------------------------------------------------
 
@@ -94,9 +97,9 @@ Shared library for ownCloud client.
 %files -n %{libname}
 %{_libdir}/libowncloudsync.so.%{vversion}
 %{_libdir}/libowncloudsync.so.%{major}
-%{_libdir}/libownclouddolphinpluginhelper.so
+#{_libdir}/libownclouddolphinpluginhelper.so
 %{_libdir}/plugins/*.so
-%{_libdir}/plugins/kf5/overlayicon/*.so
+#{_libdir}/plugins/kf5/overlayicon/*.so
 %{_libdir}/libowncloudResources.so.%{major}
 %{_libdir}/libowncloudResources.so.%{vversion}
 
@@ -143,7 +146,7 @@ This package contains development files for %{name}.
 
 
 %build
-%cmake_qt5	-DINOTIFY_LIBRARY="%{_libdir}/libc.so" \
+%cmake	-DINOTIFY_LIBRARY="%{_libdir}/libc.so" \
 	-DWITH_DOC="True" \
 	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
 	-DCMAKE_INSTALL_LIBDIR=%{_libdir} \
@@ -155,8 +158,8 @@ This package contains development files for %{name}.
 
 %install
 %make_install -C build
-chmod +x %{buildroot}%{_datadir}/nemo-python/extensions/syncstate-ownCloud.py
-chmod +x %{buildroot}%{_datadir}/nautilus-python/extensions/syncstate-ownCloud.py
+#chmod +x %{buildroot}%{_datadir}/nemo-python/extensions/syncstate-ownCloud.py
+#chmod +x %{buildroot}%{_datadir}/nautilus-python/extensions/syncstate-ownCloud.py
 
 # Dirty fix
 #pushd %{buildroot}%{_libdir}
@@ -169,5 +172,5 @@ chmod +x %{buildroot}%{_datadir}/nautilus-python/extensions/syncstate-ownCloud.p
 rm -rf %{buildroot}%{_docdir}/client/
 
 # Fix perms
-chmod -x %{buildroot}%{_datadir}/nautilus-python/extensions/syncstate-ownCloud.py
-chmod -x %{buildroot}%{_datadir}/nemo-python/extensions/syncstate-ownCloud.py
+#chmod -x %{buildroot}%{_datadir}/nautilus-python/extensions/syncstate-ownCloud.py
+#chmod -x %{buildroot}%{_datadir}/nemo-python/extensions/syncstate-ownCloud.py
