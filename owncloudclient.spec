@@ -156,7 +156,7 @@ This package contains development files for %{name}.
 
 %install
 %make_install -C build
-chmod +x %{buildroot}%{_datadir}/nemo-python/extensions/syncstate-ownCloud.py
+#chmod +x %{buildroot}%{_datadir}/nemo-python/extensions/syncstate-ownCloud.py
 chmod +x %{buildroot}%{_datadir}/nautilus-python/extensions/syncstate-ownCloud.py
 
 # Dirty fix
