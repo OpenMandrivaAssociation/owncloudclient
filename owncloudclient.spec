@@ -170,5 +170,5 @@ This package contains development files for %{name}.
 rm -rf %{buildroot}%{_docdir}/client/
 
 # Fix perms
-chmod -x %{buildroot}%{_datadir}/nautilus-python/extensions/syncstate-ownCloud.py
-chmod -x %{buildroot}%{_datadir}/nemo-python/extensions/syncstate-ownCloud.py
+#chmod -x %{buildroot}%{_datadir}/nautilus-python/extensions/syncstate-ownCloud.py
+#chmod -x %{buildroot}%{_datadir}/nemo-python/extensions/syncstate-ownCloud.py
