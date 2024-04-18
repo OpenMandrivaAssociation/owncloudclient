@@ -3,11 +3,11 @@
 %define libowncloud_csync %mklibname libowncloud_csync %{major}
 %define devname %mklibname owncloudsync -d
 
-%define vversion 5.0.0
+%define vversion 5.2.1
 
 Summary:	The ownCloud Client
 Name:		owncloudclient
-Version:	5.0.0.12278
+Version:	5.2.1.13040
 Release:	1
 License:	GPLv2+
 Group:		Archiving/Backup
@@ -22,6 +22,7 @@ BuildRequires:	graphviz
 BuildRequires:	iniparser-devel >= 3.1
 BuildRequires:  libre-graph-api-cpp-qt-client
 BuildRequires:	cmake(LibreGraphAPI)
+BuildRequires:	cmake(KDSingleApplication-qt6)
 BuildRequires:	python-sphinx
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt6)
@@ -40,17 +41,17 @@ BuildRequires:	cmake(Qt6Keychain)
 BuildRequires:	cmake(Qt6Concurrent)
 BuildRequires:	cmake(Qt6Gui)
 BuildRequires:	cmake(Qt6Sql)
-BuildRequires:	cmake(KF5Archive)
-BuildRequires:	cmake(KF5Bookmarks)
-BuildRequires:	cmake(KF5CoreAddons)
-BuildRequires:	cmake(KF5Config)
-BuildRequires:	cmake(KF5ConfigWidgets)
-BuildRequires:	cmake(KF5DBusAddons)
-BuildRequires:	cmake(KF5KIO)
-BuildRequires:	cmake(KF5KDELibs4Support)
-BuildRequires:	cmake(KF5Parts)
-BuildRequires:	cmake(KF5Activities)
-BuildRequires:	cmake(KF5Konq)
+#BuildRequires:	cmake(KF5Archive)
+#BuildRequires:	cmake(KF5Bookmarks)
+#BuildRequires:	cmake(KF5CoreAddons)
+#BuildRequires:	cmake(KF5Config)
+#BuildRequires:	cmake(KF5ConfigWidgets)
+#BuildRequires:	cmake(KF5DBusAddons)
+#BuildRequires:	cmake(KF5KIO)
+#BuildRequires:	cmake(KF5KDELibs4Support)
+#BuildRequires:	cmake(KF5Parts)
+#BuildRequires:	cmake(KF5Activities)
+#BuildRequires:	cmake(KF5Konq)
 BuildRequires:	pkgconfig(check) >= 0.9.5
 BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:	pkgconfig(libssh2)
