@@ -71,15 +71,15 @@ Server with your computer.
 
 %files
 %doc COPYING README.md
-%config(noreplace) %{_sysconfdir}/ownCloud/sync-exclude.lst
+#config(noreplace) %{_sysconfdir}/ownCloud/sync-exclude.lst
 %{_bindir}/owncloud
 %{_bindir}/owncloudcmd
 %{_iconsdir}/hicolor/*/*/*.png
 %{_datadir}/applications/owncloud.desktop
-%{_datadir}/caja-python/extensions/syncstate-ownCloud.py
-%{_datadir}/nemo-python/extensions/syncstate-ownCloud.py
-%{_datadir}/nautilus-python/extensions/syncstate-ownCloud.py
-%{_datadir}/kservices5/ownclouddolphinactionplugin.desktop
+#{_datadir}/caja-python/extensions/syncstate-ownCloud.py
+#{_datadir}/nemo-python/extensions/syncstate-ownCloud.py
+#{_datadir}/nautilus-python/extensions/syncstate-ownCloud.py
+#{_datadir}/kservices5/ownclouddolphinactionplugin.desktop
 
 #----------------------------------------------------------------------------
 
