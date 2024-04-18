@@ -95,9 +95,9 @@ Shared library for ownCloud client.
 %files -n %{libname}
 %{_libdir}/libowncloudsync.so.%{vversion}
 %{_libdir}/libowncloudsync.so.%{major}
-%{_libdir}/libownclouddolphinpluginhelper.so
+#{_libdir}/libownclouddolphinpluginhelper.so
 %{_libdir}/plugins/*.so
-%{_libdir}/plugins/kf5/overlayicon/*.so
+#{_libdir}/plugins/kf5/overlayicon/*.so
 %{_libdir}/libowncloudResources.so.%{major}
 %{_libdir}/libowncloudResources.so.%{vversion}
 
