@@ -76,6 +76,8 @@ Server with your computer.
 %{_bindir}/owncloudcmd
 %{_iconsdir}/hicolor/*/*/*.png
 %{_datadir}/applications/owncloud.desktop
+%{_sysconfdir}/owncloudclient/ownCloud/sync-exclude.lst
+%{_datadir}/applications/owncloudcmd.desktop
 #{_datadir}/caja-python/extensions/syncstate-ownCloud.py
 #{_datadir}/nemo-python/extensions/syncstate-ownCloud.py
 #{_datadir}/nautilus-python/extensions/syncstate-ownCloud.py
