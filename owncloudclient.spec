@@ -151,6 +151,7 @@ This package contains development files for %{name}.
 	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
 	-DCMAKE_INSTALL_LIBDIR=%{_libdir} \
 	-DCMAKE_BUILD_TYPE=Release \
+ 	-DBUILD_TESTING=False \
 	-DCMAKE_INSTALL_SYSCONFDIR=%{_sysconfdir}/%{name}    
 
 %make_build
