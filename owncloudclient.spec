@@ -4,11 +4,11 @@
 %define	devname %mklibname owncloudsync -d
 
 %define	oname	ownCloud
-%define	vversion 6.0.2
+%define	vversion 6.0.3
 
 Summary:	The ownCloud Client
 Name:		owncloudclient
-Version:	6.0.2.17506
+Version:	6.0.3.18040
 Release:	1
 License:	GPLv2+
 Group:	Archiving/Backup
@@ -26,7 +26,6 @@ BuildRequires:	stdc++-devel
 BuildRequires:	cmake(ECM) >= 6.0.0
 BuildRequires:	cmake(KDSingleApplication-qt6)
 BuildRequires:	cmake(LibreGraphAPI)
-#BuildRequires:	cmake(Qt6)
 BuildRequires:	cmake(Qt6Concurrent)
 BuildRequires:	cmake(Qt6Core) >= 6.8.0
 BuildRequires:	cmake(Qt6DBus)
@@ -88,11 +87,13 @@ Shared libraries for ownCloud client.
 %license COPYING
 %{_libdir}/libownCloudLibSync.so.%{vversion}
 %{_libdir}/libownCloudLibSync.so.%{major}
-%{_libdir}/plugins/%{oname}_vfs*.so
 %{_libdir}/libownCloudResources.so.%{major}
 %{_libdir}/libownCloudResources.so.%{vversion}
 %{_libdir}/libowncloudGui.so
-%{_libdir}/qml/org/%{oname}
+%{_libdir}/qt6/plugins/%{oname}_vfs*.so
+%{_libdir}/qt6/qml/org/%{oname}/gui/*
+%{_libdir}/qt6/qml/org/%{oname}/libsync/*
+%{_libdir}/qt6/qml/org/%{oname}/resources/*
 
 #----------------------------------------------------------------------------
 
