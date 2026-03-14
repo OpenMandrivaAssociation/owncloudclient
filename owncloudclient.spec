@@ -20,6 +20,7 @@ BuildRequires:	doxygen
 BuildRequires:	git
 BuildRequires:	graphviz
 BuildRequires:	libre-graph-api-cpp-qt-client >= 1.0.4
+BuildRequires:make
 BuildRequires:	python-sphinx
 BuildRequires:	iniparser-devel >= 3.1
 BuildRequires:	stdc++-devel
