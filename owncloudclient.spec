@@ -8,7 +8,7 @@
 
 Summary:	The ownCloud Client
 Name:		owncloudclient
-Version:	6.0.3.18040
+Version:	7.1.0.19041
 Release:	1
 License:	GPLv2+
 Group:	Archiving/Backup
@@ -134,7 +134,7 @@ This package contains development files for %{name}.
 #-----------------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n ownCloud-%{version}
+%autosetup -p1 -n ownCloud-7.1.0.19041
 
 
 %build
