@@ -4,7 +4,7 @@
 %define	devname %mklibname owncloudsync -d
 
 %define	oname	ownCloud
-%define	vversion 6.0.3
+%define	vversion 7.1.0
 
 Summary:	The ownCloud Client
 Name:		owncloudclient
