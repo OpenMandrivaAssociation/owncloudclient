@@ -67,9 +67,9 @@ Server with your computer.
 #config(noreplace) %%{_sysconfdir}/ownCloud/sync-exclude.lst
 %{_sysconfdir}/%{name}/%{oname}/sync-exclude.lst
 %{_bindir}/owncloud
-%{_bindir}/owncloudcmd
+#{_bindir}/owncloudcmd
 %{_datadir}/applications/owncloud.desktop
-%{_datadir}/applications/owncloudcmd.desktop
+#{_datadir}/applications/owncloudcmd.desktop
 %{_iconsdir}/hicolor/*/apps/owncloud.png
 %{_datadir}/mime/packages/owncloud.xml
 
