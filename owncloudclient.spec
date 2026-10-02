@@ -9,7 +9,7 @@
 Summary:	The ownCloud Client
 Name:		owncloudclient
 Version:	7.1.0.19041
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:	Archiving/Backup
 Url:		https://owncloud.org
